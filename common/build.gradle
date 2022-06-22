@@ -1,0 +1,22 @@
+plugins {
+	id 'org.jetbrains.kotlin.jvm' version '1.7.0'
+	id 'java'
+}
+
+group rootProject.group
+version rootProject.version
+setArchivesBaseName(project.name)
+
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compileOnly "org.jetbrains.kotlin:kotlin-stdlib"
+	compileOnly "com.google.code.gson:gson:2.8.8"
+	compileOnly "com.google.guava:guava:31.0.1-jre"
+	testImplementation "org.jetbrains.kotlin:kotlin-stdlib"
+	testImplementation "com.google.code.gson:gson:2.8.8"
+	testImplementation "com.google.guava:guava:31.0.1-jre"
+}
