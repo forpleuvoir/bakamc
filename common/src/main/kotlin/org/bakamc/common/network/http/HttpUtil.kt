@@ -40,12 +40,13 @@ object HttpUtil {
 			.apply {
 				if (!header.isEmpty()) headers(*header.toTypedArray())
 			}
+			.GET()
 			.build()
 		apply.accept(client.send(request, bodyHandler).body())
 	}
 
 	fun get(uri: String, apply: Consumer<String>, headers: List<Pair<String, String>>? = null, vararg params: Pair<String, String>) {
-		get(uri, BodyHandlers.ofString(), apply, headers, params = params)
+		get(uri, BodyHandlers.ofString(), apply, headers = headers, params = params)
 	}
 
 	fun get(uri: String, apply: Consumer<String>, headers: List<Pair<String, String>>? = null, params: JsonObject) {
